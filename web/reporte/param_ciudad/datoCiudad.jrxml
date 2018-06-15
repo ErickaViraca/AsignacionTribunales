@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="datoCiudad" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2a517788-26ee-4f40-8c5e-c53116ae0d7f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="e18981f2-b237-4344-bc23-e7d73286844b"/>
+	<parameter name="id_ciudad" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select *  from  param_datos_ciudad($P{id_ciudad})]]>
+	</queryString>
+	<field name="id_c" class="java.lang.Integer"/>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="activos" class="java.lang.Boolean"/>
+	<field name="id_pais" class="java.lang.Integer"/>
+	<field name="nombre_pais" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="137" y="40" width="149" height="20" uuid="d1e9b7d6-8f68-492c-a614-665f3efd5249"/>
+				<textElement>
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DE CIUDAD]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="13" y="22" width="111" height="17" forecolor="#000033" backcolor="#FFFFFF" uuid="72349b22-8f66-4aef-ad36-6ae987e41b6a"/>
+				<text><![CDATA[IDENTIFICADOR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="147" y="22" width="100" height="20" uuid="70a43d4f-c8dc-4cbb-bbc4-cfa15552200e"/>
+				<textFieldExpression><![CDATA[$F{id_c}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="15" width="381" height="27" backcolor="#FFFFFF" uuid="19c8127c-6d27-4d42-9523-90f3a8b888cb"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="147" y="32" width="100" height="19" forecolor="#000033" uuid="e01f4079-4530-4131-ae7d-b4bb5e94869b"/>
+				<text><![CDATA[CIUDAD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="4" width="100" height="18" forecolor="#000033" uuid="6886966e-a048-40a0-8c8a-0acad08fb337"/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="96" width="100" height="17" forecolor="#000033" backcolor="#FFFFFF" uuid="05dd860a-b6ed-4745-9fcb-3fbe9817f6fe"/>
+				<text><![CDATA[ESTADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="147" y="68" width="100" height="20" forecolor="#000033" uuid="312a6b09-7459-40d0-acc0-4e6106c03677"/>
+				<text><![CDATA[NOMBRE PAIS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="269" y="2" width="100" height="20" uuid="7c404c4c-136e-42b6-8c10-a79a414961f3"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="93" width="100" height="20" uuid="6a8fc798-f59b-453f-89a0-434953a458cc"/>
+				<textFieldExpression><![CDATA[$F{activos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="68" width="100" height="20" uuid="a0ff9eed-00bd-468b-be9d-1719f9ee880d"/>
+				<textFieldExpression><![CDATA[$F{nombre_pais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="269" y="31" width="100" height="20" uuid="5e3609cd-4d88-4eed-bb13-b1a307110eb1"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="137" y="0" width="244" height="125" uuid="9ec4d15e-3875-4b5a-978c-79a03d339ea2"/>
+			</rectangle>
+			<image>
+				<reportElement x="20" y="20" width="104" height="93" uuid="a5d89e17-405f-458f-928d-c1c7f6e053a6"/>
+				<imageExpression><![CDATA["G:\\xampp\\htdocs\\basic\\web\\images\\lp3.jpg"]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="0" y="0" width="137" height="125" uuid="f96223db-931e-4e74-b543-cb7fa871ec92"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

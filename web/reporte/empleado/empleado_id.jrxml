@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="id_empleado" language="groovy" pageWidth="421" pageHeight="595" columnWidth="321" leftMargin="50" rightMargin="50" topMargin="50" bottomMargin="50" uuid="023a1f78-70e2-4da4-b349-0f4566a67752">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="24"/>
+	<parameter name="id_empleado" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from empleado_dato_ireport($P{id_empleado})]]>
+	</queryString>
+	<field name="id_e" class="java.lang.Integer"/>
+	<field name="nombre_e" class="java.lang.String"/>
+	<field name="apellido_p_e" class="java.lang.String"/>
+	<field name="apellido_m_e" class="java.lang.String"/>
+	<field name="ci" class="java.lang.String"/>
+	<field name="telefono_e" class="java.lang.String"/>
+	<field name="direccion_e" class="java.lang.String"/>
+	<field name="id_ciudades" class="java.lang.Integer"/>
+	<field name="foto_e" class="java.lang.String"/>
+	<field name="imagen_e" class="java.lang.String"/>
+	<field name="nombre_ciudad" class="java.lang.String"/>
+	<field name="nombre_paises" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<staticText>
+				<reportElement x="26" y="34" width="281" height="21" uuid="dc63094a-bec2-47a2-8c9b-84a4a59b644b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DE EMPLEADO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="68" width="321" height="1" uuid="2123dd19-c916-4526-a1ed-a6e5af9c3c17"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<detail>
+		<band height="382" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="145" height="142" backcolor="#000000" uuid="e6baad6a-47f9-464d-816e-04378ca089a5"/>
+				<image scaleImage="FillFrame" hAlign="Center">
+					<reportElement x="14" y="14" width="118" height="116" uuid="d224f084-b57d-4103-8e30-589bdfe3d178"/>
+					<imageExpression><![CDATA[new java.io.StringBufferInputStream(new org.w3c.tools.codec.Base64Decoder($F{imagen_e}).processString())]]></imageExpression>
+				</image>
+			</frame>
+			<staticText>
+				<reportElement x="156" y="14" width="73" height="20" uuid="6847d7ce-4c3b-472c-b334-c9f20539ab53"/>
+				<textElement>
+					<font fontName="Arial Black" size="11" isBold="false" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[NOMBRE ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="156" y="45" width="165" height="20" uuid="1868fdf3-a4ec-4e48-96fc-617dd6cf31c5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_e}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="156" y="78" width="100" height="20" uuid="2878e44f-053f-46ae-885a-438c7c9be031"/>
+				<textElement>
+					<font fontName="Arial Black" size="11" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="156" y="110" width="86" height="20" uuid="82498a85-9cc8-4159-b777-9c5c1f40dafb"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellido_p_e}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="110" width="79" height="20" uuid="e5000257-4616-4732-b95b-3614a46232fd"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{apellido_m_e}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement x="0" y="179" width="321" height="90" uuid="9790281a-254d-42d1-9cf4-f2be2800e7ef"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="159" width="201" height="20" uuid="ab19f6a0-7711-455f-8450-217ee16f3d8a"/>
+				<textElement>
+					<font fontName="Arial Black" size="11"/>
+				</textElement>
+				<text><![CDATA[UBICACION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="197" width="100" height="20" uuid="d9f962d8-7868-4c85-a31a-b6d4f547e94a"/>
+				<textElement>
+					<font fontName="Arial" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="132" y="197" width="148" height="20" uuid="b05414dd-3f29-4a5e-be24-bee8ef7851d9"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefono_e}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="14" y="233" width="100" height="20" uuid="85cfb797-276a-41bb-b463-08f3a32b3d54"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="132" y="233" width="175" height="20" uuid="925a1395-8bc3-46d0-975d-d10686f735c2"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direccion_e}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="280" width="100" height="20" uuid="44db20fa-e3e2-40ee-987d-19bc96168bb4"/>
+				<textElement>
+					<font fontName="Arial Black" size="11"/>
+				</textElement>
+				<text><![CDATA[LUGAR]]></text>
+			</staticText>
+			<rectangle radius="10">
+				<reportElement x="0" y="300" width="321" height="71" uuid="4258392c-6742-4d7d-8b78-f396bf92f4b5"/>
+				<graphicElement>
+					<pen lineStyle="Double"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="14" y="310" width="100" height="20" uuid="e2cb6a0f-b68b-447a-b4c9-4dc98f42fd88"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[PAIS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="340" width="100" height="20" uuid="c0d39890-af72-4b26-a755-0ba957e5bfb3"/>
+				<textElement>
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[CIUDAD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="132" y="340" width="175" height="20" uuid="f9fe1bdd-5153-4f25-b4d4-5db73989a43c"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_ciudad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="132" y="310" width="175" height="20" uuid="9a439036-3815-4df1-a8db-421eb779bd87"/>
+				<textElement>
+					<font fontName="Arial" size="13"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre_paises}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="30" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

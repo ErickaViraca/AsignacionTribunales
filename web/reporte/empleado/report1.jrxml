@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8c8fe003-02f7-40aa-9b91-125195939a3b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_empleado" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select * from empleado_dato_ireport($P{id_empleado})]]>
+	</queryString>
+	<field name="id_e" class="java.lang.Integer"/>
+	<field name="nombre_e" class="java.lang.String"/>
+	<field name="apellido_p_e" class="java.lang.String"/>
+	<field name="apellido_m_e" class="java.lang.String"/>
+	<field name="ci" class="java.lang.String"/>
+	<field name="telefono_e" class="java.lang.String"/>
+	<field name="direccion_e" class="java.lang.String"/>
+	<field name="id_ciudades" class="java.lang.Integer"/>
+	<field name="foto_e" class="java.lang.String"/>
+	<field name="imagen_e" class="java.lang.String"/>
+	<field name="nombre_ciudad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="14" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="260" splitType="Stretch">
+			<image>
+				<reportElement x="212" y="22" width="245" height="238" uuid="ef5d116d-4c42-4faa-8ac6-1af08eb8fb31"/>
+				<imageExpression><![CDATA[new java.io.StringBufferInputStream(new org.w3c.tools.codec.Base64Decoder($F{imagen_e}).processString())]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="17" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="36" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

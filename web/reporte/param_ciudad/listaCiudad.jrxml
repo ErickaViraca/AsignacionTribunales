@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listaCiudad" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="20ba020f-0ebb-41c6-b409-9c3a7f7472bc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FF9966">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#009999">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="listaCiudad" uuid="40079755-bf78-48d6-b00d-27285bf7125d">
+		<queryString language="SQL">
+			<![CDATA[select * from param_ciudad_get()]]>
+		</queryString>
+		<field name="id_ciudades" class="java.lang.Integer"/>
+		<field name="codigos" class="java.lang.String"/>
+		<field name="nombres" class="java.lang.String"/>
+		<field name="activos" class="java.lang.Boolean"/>
+		<field name="nombre_pais" class="java.lang.String"/>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select * from param_ciudad_get()]]>
+	</queryString>
+	<field name="id_ciudades" class="java.lang.Integer"/>
+	<field name="codigos" class="java.lang.String"/>
+	<field name="nombres" class="java.lang.String"/>
+	<field name="activos" class="java.lang.Boolean"/>
+	<field name="id_pais" class="java.lang.Integer"/>
+	<field name="nombre_pais" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="209" y="41" width="148" height="20" forecolor="#000066" uuid="b86d01fd-6ac8-4403-a455-dfc23bca2bbe"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE CUIDADES]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{REPORT_COUNT}==1]]></printWhenExpression>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="93" y="0" width="360" height="50" uuid="901f143a-e575-4836-a8a7-1fb9016d6e15"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="listaCiudad" uuid="427659d6-14d0-40da-9d73-1456e2530b0b">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="386f9be5-ef68-4a3f-a1da-f1102059934c">
+						<jr:tableHeader style="table 1_TH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="84578c90-7eea-43a6-b8d7-a6cac3f5a1de"/>
+								<text><![CDATA[ID CIUDAD]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="bfa4e155-64c3-44e4-9d91-c2a4de276457"/>
+								<textFieldExpression><![CDATA[$F{id_ciudades}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="d3d75f79-bf92-4b1f-9c99-bcf0fb63c109">
+						<jr:tableHeader style="table 1_TH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="2d8a0c99-ff26-4515-9288-1ff02d4da7a0"/>
+								<text><![CDATA[CODIGO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="81fc4648-676b-4608-a9c4-11b9f3375078"/>
+								<textFieldExpression><![CDATA[$F{codigos}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="2914d6f4-599e-4d43-9b03-047484f2005c">
+						<jr:tableHeader style="table 1_TH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="a3bc7dff-c3e7-457d-bf3e-3164f2e3e37c"/>
+								<text><![CDATA[NOMBRE]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8d75c722-6898-421e-8ef2-f0ac8729aa05"/>
+								<textFieldExpression><![CDATA[$F{nombres}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="fea81ec1-b4ac-4456-abab-325bed255c90">
+						<jr:tableHeader style="table 1_TH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="13770da0-cfd2-4723-81fe-9cf1866b638e"/>
+								<text><![CDATA[ESTADO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="0d2bd546-5701-4ef8-b406-ed869aed346b"/>
+								<textFieldExpression><![CDATA[$F{activos}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="da49007e-2528-457c-a015-9940e71c83ca">
+						<jr:tableHeader style="table 1_TH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="59894b7d-73fa-4a4f-8bde-9d9e9c78f8d5"/>
+								<text><![CDATA[NOMBRE PAIS]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table 1_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="5f73150b-9a4b-41a9-8201-824b03e2a7d2"/>
+								<textFieldExpression><![CDATA[$F{nombre_pais}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

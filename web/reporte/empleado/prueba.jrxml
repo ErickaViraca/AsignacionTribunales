@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="prueba" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f1baed76-3c66-4969-9931-86d4c9ba0cba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select foto,  imagen
+from empleado where id_empleado= 126]]>
+	</queryString>
+	<field name="foto" class="java.lang.String"/>
+	<field name="imagen" class="java.lang.Object"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="47" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="151" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="160" height="151" uuid="c5b3250f-8c05-4c05-8c41-05885af60fc2"/>
+				<imageExpression><![CDATA[net.sf.jasperreports.engine.util.JRImageLoader.getInstance(new SimpleJasperReportsContext()).loadAwtImageFromBytes(javax.xml.bind.DatatypeConverter.parseBase64Binary($F{foto2}))]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="245" y="0" width="220" height="151" uuid="47676eda-1111-42f6-9ab7-e269cd9fba16"/>
+				<imageExpression><![CDATA[new java.io.StringBufferInputStream(new org.w3c.tools.codec.Base64Decoder($F{foto2}).processString())]]></imageExpression>
+			</image>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="24" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="26" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="28" splitType="Stretch"/>
+	</summary>
+</jasperReport>

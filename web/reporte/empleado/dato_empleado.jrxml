@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dato_empleado" language="groovy" pageWidth="421" pageHeight="595" columnWidth="381" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="00697fb0-6162-40cf-943d-bf5777bd8914">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_empleado" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from empleado_dato_ireport($P{id_empleado})]]>
+	</queryString>
+	<field name="id_e" class="java.lang.Integer"/>
+	<field name="nombre_e" class="java.lang.String"/>
+	<field name="apellido_p_e" class="java.lang.String"/>
+	<field name="apellido_m_e" class="java.lang.String"/>
+	<field name="ci" class="java.lang.String"/>
+	<field name="telefono_e" class="java.lang.String"/>
+	<field name="direccion_e" class="java.lang.String"/>
+	<field name="id_ciudades" class="java.lang.Integer"/>
+	<field name="foto_e" class="java.lang.String"/>
+	<field name="imagen_e" class="java.lang.String"/>
+	<field name="nombre_ciudad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="0" width="120" height="70" forecolor="#000000" backcolor="#FFFFFF" uuid="dbd96f76-71df-4d1b-b1a5-193c5332376d"/>
+				<textElement>
+					<font fontName="Lucida Calligraphy" size="48" isBold="false" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[R.E.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="303" y="40" width="78" height="20" uuid="0ebdc389-4c73-4bf0-80a5-f39706853326"/>
+				<text><![CDATA[TELF: 4567823]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="214" y="20" width="167" height="20" uuid="71a9a05a-f93a-4f1c-b56e-40e5c4886cca"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[CALLE: Calama y 16 de Julio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="0" width="119" height="20" uuid="bda72085-5d5e-4563-a8a8-63ad9777ca8d"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[UNIPERSONAL S.R.L]]></text>
+			</staticText>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="12" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="381" height="1" uuid="3f123d39-6217-475b-8648-2620dd46ff3c"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="313" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="58" width="236" height="14" backcolor="#99CCFF" uuid="e04fee98-8437-4c8d-ad29-97337dc5c85f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NOMBRE ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="103" width="236" height="15" backcolor="#99CCFF" uuid="7dda0d6c-2d91-4705-94e5-cdda2d353fe9"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[APELLIDOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="38" width="236" height="20" uuid="df0b03ee-38ed-4c8f-a221-222b54b087e7"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{nombre_e}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="10" y="82" width="100" height="20" uuid="29c6ddfc-9e31-4486-8ca5-6544b0ee44cd"/>
+				<textFieldExpression><![CDATA[$F{apellido_p_e}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="136" y="82" width="100" height="20" uuid="57bbf26a-c9f0-4665-8df4-a500dacaf48a"/>
+				<textFieldExpression><![CDATA[$F{apellido_m_e}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="146" width="136" height="20" backcolor="#99CCFF" uuid="a277b83d-744b-481b-992c-5062de16fb16"/>
+				<text><![CDATA[CEDULA DE INDENTIDAD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="151" y="146" width="85" height="20" uuid="2400ee3d-f783-4ba9-99fb-02de3cc6c5b9"/>
+				<textFieldExpression><![CDATA[$F{ci}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="180" width="97" height="20" backcolor="#99CCFF" uuid="7a049e93-7d1e-42f8-a929-b462b2efce6f"/>
+				<text><![CDATA[TELEFONO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="263" width="97" height="20" backcolor="#99CCFF" uuid="3ef8d476-e162-48e6-a532-1c554be5dc22"/>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="220" width="97" height="20" backcolor="#99CCFF" uuid="e4688fa4-0f3a-4830-a548-bf16b2782c81"/>
+				<text><![CDATA[CIUDAD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="180" width="116" height="20" uuid="a8fb4dd4-f49c-41b0-82c9-b8ff306ff1d0"/>
+				<textFieldExpression><![CDATA[$F{telefono_e}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="220" width="116" height="20" uuid="6545cd2f-d863-40b0-8262-9448c1fad773"/>
+				<textFieldExpression><![CDATA[$F{nombre_ciudad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="263" width="206" height="20" uuid="3f1dac3b-0130-4b18-a801-12355338a281"/>
+				<textFieldExpression><![CDATA[$F{direccion_e}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Opaque" x="236" y="0" width="145" height="166" backcolor="#333333" uuid="f35352d9-1551-4e21-aba5-96cb64827636"/>
+			</rectangle>
+			<image scaleImage="FillFrame" hAlign="Center">
+				<reportElement x="251" y="20" width="116" height="126" uuid="dc78aed7-224c-4672-a4cb-f959649facd0"/>
+				<imageExpression><![CDATA[new java.io.StringBufferInputStream(new org.w3c.tools.codec.Base64Decoder($F{imagen_e}).processString())]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="20" y="0" width="185" height="20" forecolor="#006666" backcolor="#000033" uuid="18cdeac5-9995-45a3-9a74-9e0b88f87bf8"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO DE EMPLEADO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="166" width="381" height="1" uuid="2b97177f-8ee7-4fd0-be0b-4b5ef328ad36"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="21" splitType="Stretch"/>
+	</pageFooter>
+</jasperReport>

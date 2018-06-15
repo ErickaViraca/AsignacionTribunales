@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="datosCiudad" language="groovy" pageWidth="210" pageHeight="297" columnWidth="170" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e1746362-e74c-41df-a7b2-5b4840b7bf36">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="datosCiudad" uuid="ad7181df-c7ff-4862-a650-6a75ac9cc25b">
+		<queryString language="SQL">
+			<![CDATA[select * from param_datos_ciudad(17)]]>
+		</queryString>
+		<field name="id_c" class="java.lang.Integer"/>
+		<field name="codigo" class="java.lang.String"/>
+		<field name="nombre" class="java.lang.String"/>
+		<field name="activos" class="java.lang.Boolean"/>
+		<field name="id_pais" class="java.lang.Integer"/>
+		<field name="nombre_pais" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="id_ciudad" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select * from param_datos_ciudad($P{id_ciudad})]]>
+	</queryString>
+	<field name="id_c" class="java.lang.Integer"/>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="nombre" class="java.lang.String"/>
+	<field name="activos" class="java.lang.Boolean"/>
+	<field name="id_pais" class="java.lang.Integer"/>
+	<field name="nombre_pais" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="142" y="60" width="100" height="20" uuid="473f0cc5-4be9-4f62-a498-6137866e240e"/>
+				<textFieldExpression><![CDATA[$F{nombre_pais}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="62" y="16" width="100" height="20" uuid="99db5315-63eb-416b-b324-8a3b90650ad5"/>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="16" y="80" width="62" height="20" uuid="998cd1e9-3198-40e0-902f-6bcfa3d77e15"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+</jasperReport>

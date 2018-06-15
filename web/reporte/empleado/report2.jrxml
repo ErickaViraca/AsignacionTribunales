@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9bd4adff-17f5-4ab6-baa2-b1c9d2bf2a1d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from empleado_dato_ireport(122)]]>
+	</queryString>
+	<field name="id_e" class="java.lang.Integer"/>
+	<field name="nombre_e" class="java.lang.String"/>
+	<field name="apellido_p_e" class="java.lang.String"/>
+	<field name="apellido_m_e" class="java.lang.String"/>
+	<field name="ci" class="java.lang.String"/>
+	<field name="telefono_e" class="java.lang.String"/>
+	<field name="direccion_e" class="java.lang.String"/>
+	<field name="id_ciudades" class="java.lang.Integer"/>
+	<field name="foto_e" class="java.lang.String"/>
+	<field name="imagen_e" class="java.lang.String"/>
+	<field name="nombre_ciudad" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="44" y="2" width="100" height="20" uuid="44346b68-b36a-4fe2-a2d7-56f7f8d4deda"/>
+				<text><![CDATA[nombre_e]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="445" y="2" width="100" height="20" uuid="1976b2f3-87e0-4cab-a58f-1450e538a96d"/>
+				<text><![CDATA[telefono_e]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="44" y="35" width="100" height="20" uuid="fc0f7b22-5f40-4ce4-9fe4-e7495c276461"/>
+				<textFieldExpression><![CDATA[$F{nombre_e}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="35" width="100" height="20" uuid="5249a6b8-7625-4c9e-9db0-42b79de932b4"/>
+				<textFieldExpression><![CDATA[$F{telefono_e}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
