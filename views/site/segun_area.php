@@ -11,7 +11,7 @@ use app\models\TribunalForm;
 ?>
 <div class="row">
     <div class="well">
-        <h4 class="text-center text-info">LISTA DE PROFESIONALES SEGUN EL AREA DEL TITULO </h4>
+        <h4 class="text-center text-info">LISTA DE PROFESIONALES SEGUN EL AREA DEL PROYECTO</h4>
         <br>
         <div class="well">
             <?php
@@ -47,7 +47,7 @@ use app\models\TribunalForm;
                      $contador = 1;
                      foreach ($lista_estudiante as $dato_estudiante){ ?>
                     <td>
-                      <?php echo $contador++.'.- '. $dato_estudiante['nombre_estu']; ?>   
+                      <?php echo $contador++.'.- '. $dato_estudiante['nombre_estu'].' '.$dato_estudiante['paterno_estu'].' '.$dato_estudiante['materno_estu'] ; ?> 
                     </td>
                     <?php } ?>  
                 </tr>

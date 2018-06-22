@@ -89,6 +89,19 @@ class Docente extends \yii\db\ActiveRecord
     return $this->hasMany(DocArea::className(), ['docente_iddocente' => 'iddocente']);
   }
 
+
+  public function getCorreoDocenteById($id_docente)
+  {
+    $docente = Yii::$app->db->createCommand('
+        SELECT correo_doc
+        FROM docente 
+        WHERE iddocente = :id_docente
+        ')
+      ->bindValue(':id_docente', $id_docente)
+      ->queryScalar();
+    return $docente;
+  }
+
   /*
    * funcion para insertar en usuario
    */
@@ -128,7 +141,8 @@ class Docente extends \yii\db\ActiveRecord
   /*
  * function to list all the profesionals existents
  */
-  public function lista_docente(){
+  public function lista_docente()
+  {
     $db = Yii::$app->db;
     $count = $db->createCommand('select 
 	 COUNT(*)
